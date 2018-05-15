@@ -1,0 +1,161 @@
+@import "compass";
+@import url(https://fonts.googleapis.com/css?family=Abel);
+// font-family
+$baseFontFamily :"游ゴシック", YuGothic, "メイリオ",Verdana, "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+
+// colors
+$baseColor: #f2eded;
+$subColor: #d2cbcb;
+$keyColor: #c9638a;
+$fontColor: #4c4c4c;
+
+
+/* Base
+------------------------------------------------------------*/
+html{ font-size: 62.5%; }
+
+body{
+  color: $fontColor;
+  font-size: 1.4rem;
+  font-family:$baseFontFamily;
+  line-height:1.6;
+  letter-spacing: 0.1em; 
+  background-color: $baseColor;
+}
+
+/* Align
+------------------------------------------------------------*/
+.text-center {
+  text-align: center;
+}
+
+/* Contents
+------------------------------------------------------------*/
+// Common Styles
+section {
+  padding: 30px 0;
+  .container {
+    width: 90%;
+    margin:auto;
+  }
+  h2 {
+    font-size: 2.6rem;
+    margin-bottom: 20px;
+  }
+  h3 {
+    font-size: 1.6rem;
+    color: $keyColor;
+    font-weight:bold;
+    margin-bottom: 10px;
+  }
+  h4 {
+    font-size: 2.2rem;
+  }
+}
+
+// desktop
+@media (min-width: 769px) {
+    section {
+      padding: 45px 0;
+    
+      h2 {
+        margin-bottom: 40px;
+      }
+      h3 {
+        font-size: 1.6rem;
+        color: $keyColor;
+        font-weight:bold;
+        margin-bottom: 10px;
+      }
+      h4 {
+        margin-bottom: 30px;
+      }
+    }
+}
+
+
+// Headder
+
+header {
+  width: 100%;
+  overflow: hidden;
+  img {
+      height: 250px;
+      width: 100%;
+      object-fit: cover;
+   }
+}
+// desktop
+@media (min-width: 769px) {
+  header {
+    width: 100%;
+    img {
+        height: 500px;
+        width: 100%;
+        object-fit: cover;
+       }
+    }
+  
+}
+
+// Main contents
+#test-contents {
+  .container {
+    @include display-flex;
+    justify-content: space-between;
+    @include flex-direction(column);  
+    }
+    .content-box {
+    @include flex(1);
+    margin: 10px 0;                     // 上下にマージン
+    padding: 20px;
+    background-color:#ffffff;
+    @include border-radius(6px);
+    @include box-sizing(border-box);
+    }
+}
+// desktop
+@media (min-width: 769px) {
+
+  // Main contents
+  #test-contents {
+    .container {
+      @include flex-direction(row);  
+      justify-content: space-between;
+    }
+    .content-box {
+      margin: 0 10px; 
+    }
+  }
+}
+
+// Fotter
+#footer{
+  background-color:$subColor;
+  a {
+    color:#ffffff;
+    text-decoration:none;
+    font-weight:normal;
+  }
+}
+
+.button-footer {
+  margin: 20px auto 20px;
+  width: 60%;
+  height: 20px;
+  padding: 10px;
+  background-color:$keyColor;
+  color: $fontColor;
+  text-align: center;
+  display: block;
+  @include border-radius(6px);
+  font-size: 1.6rem;
+  line-height: 1.4;
+}
+
+// desktop
+@media (min-width: 769px) {
+    .button-footer {
+    width: 400px;
+  }
+}
